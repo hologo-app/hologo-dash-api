@@ -14,7 +14,6 @@ const getAllLenses = async (req, res) => {
 const createNewLens = async (req, res) => {
     try {
         const { lensCategory, lensName, lensGroupID, lensImage } = req.body;
-        const base64ImageData = Buffer.from(lensImage, 'base64');
         const newLens = await Lenses.create({
             lensCategory,
             lensName,

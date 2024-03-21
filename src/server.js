@@ -1,5 +1,6 @@
 
 const express = require('express');
+require('dotenv').config();
 const app = express();
 const cors = require('cors');
 const { logger } = require('./middleware/logEvents');
@@ -19,6 +20,7 @@ app.use(cookieParser());
 
 //routes
 app.use('/lens', require('./routes/api/lenses'));
-
+app.use('/register', require('./routes/api/user'));
+app.use('/auth',require('./routes/auth'))
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

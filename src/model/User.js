@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
-const sequelize = require("../database");
+const sequelize = require("./../config/db.con");
 
-const Users = sequelize.define("Users", {
+const User = sequelize.define("User", {
   userID: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -25,9 +25,9 @@ const Users = sequelize.define("Users", {
     allowNull:false,
   },
   refreshtoken: {
-    type: DataTypes.STRING,
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: true,
   },
 });
 
-module.exports = Users;
+module.exports = User;
