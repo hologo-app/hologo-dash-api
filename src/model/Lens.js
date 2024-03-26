@@ -21,7 +21,7 @@ const Lenses = sequelize.define("Lenses", {
     allowNull: false,
   },
   lensImage: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false,
     
   },

@@ -1,4 +1,5 @@
 const Lenses = require('./../model/Lens');
+const fs = require('fs');
 
 const getAllLenses = async (req, res) => {
     try {
@@ -13,14 +14,16 @@ const getAllLenses = async (req, res) => {
 
 const createNewLens = async (req, res) => {
     try {
-        const { lensCategory, lensName, lensGroupID, lensImage } = req.body;
+        const { lensCategory, lensName, lensGroupID , lensImage } = req.body;
+
         const newLens = await Lenses.create({
             lensCategory,
             lensName,
             lensGroupID,
-            lensImage ,
-            activeStatus : true
+            lensImage,
+            activeStatus: true
         });
+
         res.status(201).json(newLens);
     } catch (error) {
         console.error(error);
