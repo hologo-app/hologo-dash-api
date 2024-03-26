@@ -21,8 +21,9 @@ const Lenses = sequelize.define("Lenses", {
     allowNull: false,
   },
   lensImage: {
-    type: DataTypes.BLOB('long'),
+    type: DataTypes.STRING,
     allowNull: false,
+    
   },
   activeStatus: {
     type: DataTypes.BOOLEAN,
