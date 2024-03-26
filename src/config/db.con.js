@@ -1,6 +1,11 @@
 const {Sequelize}  = require("sequelize");
 
-const sequelize = new Sequelize(
+let sequelize;
+
+if (process.env.DB_URL) {
+    sequelize = new Sequelize(process.env.DB_URL);
+  } else {
+ sequelize = new Sequelize(
     'hologodb',
     'postgres',
     '0502',{
@@ -8,7 +13,7 @@ const sequelize = new Sequelize(
         dialect:"postgres",
     }
 );
-
+  }
 sequelize.sync();
 
 (async () =>{
