@@ -1,3 +1,8 @@
 20240321	01:39:07	9a9d1df8-f010-458c-aca3-bf37b0f677fe	SyntaxError: Unexpected token I in JSON at position 4
 20240321	01:39:31	21010b45-b657-4ba2-a52c-9f621f56113d	SyntaxError: Unexpected token I in JSON at position 4
 20240325	17:19:44	56ae9279-5b60-4e34-8329-f84365789980	Error: Not allowed by CORS
+20240327	13:13:32	00899cb5-0fd9-45ab-bed8-18e0bf9c9ff2	PayloadTooLargeError: request entity too large
+20240327	13:26:25	656405bc-10f6-48df-8939-dffeb3bae3ed	PayloadTooLargeError: request entity too large
+20240328	02:14:59	7b22188c-0c15-4ec7-a2ab-67c9770a974d	TypeError: req.role.map is not a function
+20240328	02:15:40	f20f3df8-079f-4147-895b-7426e9cba036	TypeError: req.role.map is not a function
+20240328	02:16:02	bdbb811e-b1f9-4bfd-8c59-1011b2283580	TypeError: req.role.map is not a function

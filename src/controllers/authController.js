@@ -19,6 +19,7 @@ const handleLogin = async (req, res) => {
     const match = await bcrypt.compare(pwd, foundUser.password);
     if (match) {
       const role = foundUser.usertype;
+      const username = foundUser.username
 
       // Create JWTs
       const accessToken = jwt.sign(
@@ -70,7 +71,7 @@ const handleLogin = async (req, res) => {
       }); // , secure: true
 
       // Send authorization roles and access token to user
-      res.json({ accessToken });
+      res.json({ accessToken , role , username });
     } else {
       res.sendStatus(401);
     }

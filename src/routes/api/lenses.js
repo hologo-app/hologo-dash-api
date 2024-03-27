@@ -5,10 +5,10 @@ const ROLES_LIST = require('../../config/rolesList');
 const verifyRoles = require('../../middleware/verifyRoles');
 
 router.route('/')
-    .get(lensesControllers.getAllLenses)
-    .post(lensesControllers.createNewLens)
-    .put( lensesControllers.updateLens)
-    .delete(lensesControllers.deleteLens);
+    .get( verifyRoles(ROLES_LIST[0]) , lensesControllers.getAllLenses)
+    .post(verifyRoles(ROLES_LIST[0]) , lensesControllers.createNewLens)
+    .put( verifyRoles(ROLES_LIST[0]),  lensesControllers.updateLens)
+    .delete(verifyRoles(ROLES_LIST[0]) ,lensesControllers.deleteLens);
 
 router.route('/:id')
     .get(lensesControllers.getLens);
