@@ -1,5 +1,5 @@
 const allowedOrigins = [
-    'https://www.yoursite.com',
+    'https://hologo-dash.netlify.app',
     'http://localhost:3500',
     'http://localhost:3000'
 ];
