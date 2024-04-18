@@ -11,7 +11,7 @@ const handleLogout = async (req, res) => {
         // Check if refreshToken exists in the database
         const foundUser = await User.findOne({ where: { refreshToken } });
         if (!foundUser) {
-            res.clearCookie('jwt', { httpOnly: true, sameSite: 'None'  });  //secure: true
+            res.clearCookie('jwt', { httpOnly: true, sameSite: 'None' ,secure: true });  //secure: true
             return res.sendStatus(204);
         }
 
@@ -20,7 +20,7 @@ const handleLogout = async (req, res) => {
         await foundUser.update({ refreshToken: null });
 
         // Clear refreshToken cookie
-        res.clearCookie('jwt', { httpOnly: true, sameSite: 'None'  });  //secure: true
+        res.clearCookie('jwt', { httpOnly: true, sameSite: 'None',secure: true  });  //secure: true
         res.sendStatus(200);
     } catch (error) {
         console.error(error);

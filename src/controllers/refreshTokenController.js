@@ -6,7 +6,7 @@ const handleRefreshToken = async (req, res) => {
     const cookies = req.cookies;
     if (!cookies?.jwt) return res.sendStatus(401);
     const refreshToken = cookies.jwt;
-    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None' }); // secure: true
+    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None',secure: true }); // secure: true
 
     try {
         const foundUser = await User.findOne({ where: { refreshToken } });
@@ -52,7 +52,7 @@ const handleRefreshToken = async (req, res) => {
 
             await foundUser.update({ refreshToken: newRefreshTokenString });
             // Creates Secure Cookie with refresh token
-            res.cookie('jwt', newRefreshToken, { httpOnly: true,  sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 }); // secure: true,
+            res.cookie('jwt', newRefreshToken, { httpOnly: true,  sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 ,secure: true}); // secure: true,
 
             res.json({ accessToken });
         });
