@@ -827,3 +827,4 @@
 20240330	23:29:00	40dd7ea7-d31e-4ad6-a09d-8c392458d3cf	GET	https://hologo-dash.netlify.app	/logout
 20240330	23:31:23	969ec17c-382e-437b-9cb3-4d0a8828c604	OPTIONS	https://hologo-dash.netlify.app	/auth
 20240330	23:31:23	c2510cb7-8025-4338-ad33-16a59575788f	POST	https://hologo-dash.netlify.app	/auth
+20240418	10:49:28	c4c222e7-cb03-4da3-b57f-0b956730cd49	POST	undefined	/auth

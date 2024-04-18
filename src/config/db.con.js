@@ -7,7 +7,7 @@ if (process.env.DB_URL) {
   } else {
  sequelize = new Sequelize(
     'hologodb',
-    'postgres',
+    'hologo-admin',
     '0502',{
         host:"localhost",
         dialect:"postgres",
