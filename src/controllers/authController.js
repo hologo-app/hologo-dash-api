@@ -53,7 +53,7 @@ const handleLogin = async (req, res) => {
         }
 
         // Clear existing cookie
-        res.clearCookie("jwt", { httpOnly: true, sameSite: "None",secure: true }); // , secure: true
+        res.clearCookie("jwt", { httpOnly: true, sameSite: "None" }); // , secure: true
       }
 
 
@@ -67,7 +67,7 @@ const handleLogin = async (req, res) => {
         httpOnly: true,
         sameSite: "None",
         maxAge: 24 * 60 * 60 * 1000,
-        secure: true
+  
       }); // , secure: true
 
       // Send authorization roles and access token to user
