@@ -39,7 +39,7 @@ app.use('/auth',require('./routes/auth'))
 app.use('/refresh',require('./routes/refresh'))
 app.use('/logout', require('./routes/logout'));
 app.use('/register', require('./routes/api/user'));
-app.use('/api/unity/lens',require("./routes/unity/lenses"));
+app.use('/unity/lens',require("./routes/unity/lenses"))
 app.use(verifyJWT) ////////
 app.use('/lens', require('./routes/api/lenses'));
 
